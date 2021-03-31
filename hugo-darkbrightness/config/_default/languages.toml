@@ -1,0 +1,13 @@
+# Test Language variables
+[de]
+    title = "Mein Blog"
+    languagename = "deutsch"
+    weight = 1
+[en]
+    title = "My blog"
+    languagename = "english"
+    weight = 2
+[fr]
+    title = "Mon blogue"
+    languagename = "français"
+    weight = 3
