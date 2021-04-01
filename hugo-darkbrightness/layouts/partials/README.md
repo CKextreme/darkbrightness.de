@@ -14,7 +14,7 @@ page templates that can be used economically to keep your templating DRY."
 
 ## Return a value from a Partial
 
-e.g. `{{ return $value }}`
+e.g. `{{/* return $value */}}` (remove the go template comments /* */)
 
 ## Cached Partials
 
