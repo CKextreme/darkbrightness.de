@@ -1,54 +1,7 @@
-<h1>Index.html / Page Kind: {{ .Page.Kind }} / Type: {{ .Page.Type }}</h1>
+{{ define "main" }}
 
-<p>{{.Pages}}</p>
-<ol>
-{{ range $a, $b := .Pages}}
-  <li><a href="{{ .Permalink }}">{{ $b }}</a></li>
-{{end}}
-</ol>
-
-<h1>Languages</h1>
 <section>
-    <ul>
-      {{ range $languagename, $language := .Site.Languages }}
-	<li>Key: {{$languagename}} / Value: {{$language}} ({{ $language.LanguageName }})</li>
-      {{ end }}
-    </ul>
-  </section>
+Hello World from Main Block in main element
+</section>
 
-<hr>
-
-<h1>Taxonomien</h1>
-<section>
-    <ul>
-      {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-        <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
-          <ul>
-            {{ range $key, $value := $taxonomy }}
-            <li> {{ $key }}</li>
-            
-                  <ul>
-                  {{ range $value.Pages }}
-                      <li><a href="{{ .Permalink }}" title="{{ .LinkTitle }}">{{ .Title }}</a> </li>
-                  {{ end }}
-                  </ul>
-            {{ end }}
-          </ul>
-        </li>
-      {{ end }}
-    </ul>
-  </section>
-
-<hr>
-
-<h1>Menus</h1>
-<section>
-    <ul>
-      {{ range $key, $menu := $.Site.Menus }}
-	<li>Key: {{$key}} / Debug: {{printf "%#v" $menu}}</li>
-       {{ range $key, $v := $menu }}
-        <p>Name: {{$v.Name}} ;  URL: {{$v.URL}} ; Wichtung: {{$v.Weight}}</p>
-       {{ end }}
-      {{ end }}
-    </ul>
-  </section>
+{{ end }}

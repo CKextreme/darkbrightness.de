@@ -1,8 +1,11 @@
-# Test Language variables
 [de]
-    title = "Mein Blog"
+    title = "Darkbrightness"
     languagename = "deutsch"
     weight = 1
+[de.params]
+    subtitle = "Alles rund ums Thema Horror"
+
+# Test Language variables
 [en]
     title = "My blog"
     languagename = "english"

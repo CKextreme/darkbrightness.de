@@ -1,0 +1,96 @@
+{{/*
+{{ define "test" }}
+
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+*/}}
+
+{{/*
+{{ define "main" }}
+*/}}
+
+<h1>Index.html / Page Kind: {{ .Page.Kind }} / ContentType: {{ .Page.Type }}</h1>
+
+<p>{{.Pages}}</p>
+<ol>
+{{ range $a, $b := .Pages}}
+  <li><a href="{{ .Permalink }}">{{ $b }}</a></li>
+{{end}}
+</ol>
+
+
+
+<hr>
+
+<h1>Taxonomien</h1>
+<section>
+    <ul>
+      {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+        <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
+          <ul>
+            {{ range $key, $value := $taxonomy }}
+            <li><a href="/{{ $taxonomyname | urlize }}/{{$key | urlize}}">{{ $key }}</a></li>
+            
+                  <ul>
+                  {{ range $value.Pages }}
+                      <li><a href="{{ .Permalink }}" title="{{ .LinkTitle }}">{{ .Title }}</a> </li>
+                  {{ end }}
+                  </ul>
+            {{ end }}
+          </ul>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+<hr>
+
+<h1>Menus</h1>
+<section>
+    <ul>
+      {{ range $key, $menu := $.Site.Menus }}
+	<li>Key: {{$key}} / Debug: {{printf "%#v" $menu}}</li>
+       {{ range $key, $v := $menu }}
+        <p>Name: {{$v.Name}} ;  URL: {{$v.URL}} ; Wichtung: {{$v.Weight}}</p>
+       {{ end }}
+      {{ end }}
+    </ul>
+  </section>
+
+  {{/*}}
+{{ end }}
+*/}}
+
+<hr>
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+    <p>
+      {{ if $pag.HasPrev }}
+      <span>
+        <a href="{{ $pag.Prev.URL }}" rel="prev">
+          Prev
+        </a>
+      </span>
+      {{ end }}
+
+      {{ range $pag.Pagers }}
+      {{ if eq . $pag }}
+      <span>
+        {{ .PageNumber }}
+      </span>
+      {{ else }}
+      <span>
+        <a href="{{ .URL }}">{{ .PageNumber }}</a>
+      </span>
+      {{ end }}
+      {{ end }}
+
+      {{ if $pag.HasNext }}
+      <span>
+        <a href="{{ $pag.Next.URL }}" rel="next">
+          Next
+        </a>
+      </span>
+      {{ end }}
+    </p>
+{{ end }}

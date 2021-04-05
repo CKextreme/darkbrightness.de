@@ -1,0 +1,9 @@
+https://gohugo.io/templates/pagination/
+
+.Paginate
+
+# .Paginate function
+
+takes a slice (like an array) of pages and returns an `.Pager` object for pagination.
+
+> e.g. `{{/* range (.Paginate ( first 50 .Pages.ByTitle )).Pages */}}`

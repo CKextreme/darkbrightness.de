@@ -1,0 +1,75 @@
+{{/*
+    {{ range (.Paginate .Site.RegularPages).Pages }}
+      <li>{{.IsHome}}</li>
+    {{end}}
+*/}}
+
+
+
+{{/*
+{{ $pag := $.Paginator }}
+{{range $key, $value := $.Paginator.Pages }}
+{{ with $value.Title }}
+            {{ partial "articles/summary.html" $value }}
+	{{ end }}
+			<hr>
+{{ end }}
+*/}}
+
+
+
+{{/*
+    {{ range $tmp := .Site.RegularPages }}
+        {{ with $tmp.Title }}
+                {{ partial "articles/summary.html" $tmp }}
+                <hr>
+        {{ end }}
+    {{ end }}
+*/}}
+
+
+
+{{/*
+<h1>Languages</h1>
+  <ul>
+      {{ range $languagename, $language := .Site.Languages }}
+	  <li>Key: {{$languagename}} / Value: {{$language}} ({{ $language.LanguageName }})</li>
+      {{ end }}
+  </ul>
+  */}}
+
+  {{/*
+    
+<span> (Lesezeit: {{ partial "_helpers/readingtime" .}}  min.)</span>
+Use .Site.Taxonomies to get all defined taxonomies and terms
+
+<span>
+    {{$tags := .Params.tags }}
+    {{if gt $tags 0 }}
+    <span>Tags:</span>
+    {{ end }}
+    {{ range $value :=  $tags }}
+        <span><a href="{{ printf "tags/%s" $value | urlize }}">{{ $value | urlize }}</a></span>
+    {{ end }}
+</span>
+
+<span>
+    {{$categories := .Params.categories }}
+    {{if gt $categories 0 }}
+    <span>Categories:</span>
+    {{ end }}
+    {{ range $value :=  $categories }}
+        <span><a href="{{ printf "categories/%s" $value | urlize }}">{{ $value | urlize }}</a></span>
+    {{ end }}
+</span>
+
+<span>
+    {{$series := .Params.series }}
+    {{if gt $series 0 }}
+    <span>Series:</span>
+    {{ end }}
+    {{ range $value :=  $series }}
+        <span><a href="{{ printf "series/%s" $value | urlize }}">{{ $value | urlize }}</a></span>
+    {{ end }}
+</span>
+*/}}

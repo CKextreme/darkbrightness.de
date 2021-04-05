@@ -1,0 +1,17 @@
+baseURL = "http://example.org/"
+
+# Language config
+defaultContentLanguage = "de"
+languageCode = "de"
+languageName = "Deutsch"
+
+# Disable the generation of a RSS and sitemap file
+disableKinds = ["RSS", "sitemap"]
+
+# Min. X words, but searches for a dot to make a completed sentence and so one it could be more words.
+summaryLength = 30
+
+# Number of Pages in each paginate
+paginate = 3
+# Ignore the README's from beeing rendered
+ignoreFiles = ["README.md"]

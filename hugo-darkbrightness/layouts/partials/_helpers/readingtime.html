@@ -1,0 +1,6 @@
+{{/* Custom reading time with 160 words per minute (WPM) -
+a bit lower than normal(~220-250 WPM} because you are reading a
+new unknown article and maybe look at pictures */}}
+
+{{ $time := math.Ceil (div .WordCount 160.0) }}
+{{ return $time }}

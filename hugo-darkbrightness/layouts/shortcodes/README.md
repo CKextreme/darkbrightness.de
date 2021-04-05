@@ -3,6 +3,8 @@
 "Shortcodes are a means to consolidate templating into small,
 reusable snippets that you can embed directly inside of your content."
 
+> Please note: only available in `/content` pages!
+
 > Source: https://gohugo.io/templates/shortcode-templates/
 
 ## Built-in shortcodes variables

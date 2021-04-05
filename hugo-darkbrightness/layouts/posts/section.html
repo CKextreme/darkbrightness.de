@@ -1,7 +1,7 @@
 {{ define "main" }}
 <h1>Section.html / Page Kind: {{ .Page.Kind }} / ContentType: {{ .Page.Type }}</h1>
 
-{{ range $tmp := .RegularPagesRecursive }}
+{{ range $tmp := .Site.RegularPages }}
         {{ with $tmp.Title }}
                 {{ partial "articles/summary.html" $tmp }}
                 <hr>

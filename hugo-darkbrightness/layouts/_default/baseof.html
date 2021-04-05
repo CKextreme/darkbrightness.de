@@ -1,5 +1,16 @@
-<h1>Baseof.html / Page Kind: {{ .Page.Kind }} / Type: {{ .Page.Type }}</h1>
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "de" }}">
 
-{{ range .Pages }}
-	{{ . }}
-{{ end }}
+{{ partial "core/head.html" . }}
+
+<body>
+{{ partial "core/header.html" . }}
+
+<main>
+
+{{ block "main" . }}{{end}}
+</main>
+
+{{ partial "core/footer.html" . }}
+</body>
+</html>

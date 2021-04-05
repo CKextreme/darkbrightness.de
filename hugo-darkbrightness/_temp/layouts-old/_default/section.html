@@ -1,0 +1,48 @@
+<h1>Section.html / Page Kind: {{ .Page.Kind }} / ContentType: {{ .Page.Type }}</h1>
+
+{{ range .Paginator.Pages.ByDate }}
+            <p>{{ .File }} / Prev: {{.Prev}} / Next: {{.Next}}</p>
+{{ end }}
+<hr>
+
+{{ $pag := $.Paginator }}
+<p>Totalpages: {{ printf "%#v" $pag.TotalPages }}</p>
+<hr>
+<p>{{ printf "%#v" $pag.Pagers }}</p>
+<hr>
+{{ range $key, $v := $pag.Pagers }}
+<ul>Last: {{$v.Last}}</ul>
+<p>{{ printf "%#v" $v.Pages }}</p>
+	{{ range $key, $v := $v.Pages }}
+		<li>{{.}}</li>
+	{{end}}
+{{end}}
+<hr>
+
+{{ if gt $pag.TotalPages 1 }}
+<div class="blog-post-pagination">
+  <nav aria-label="Page navigation example" class="nav-bg">
+    <ul class="pagination">
+      {{ range $pag.Pagers }}
+      {{ if eq . $pag }}
+      <li class="page-item">
+        <a class="page-link active" href="{{ .URL }}">{{ .PageNumber }}</a>
+      </li>
+      {{ else }}
+      <li class="page-item">
+        <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
+      </li>
+      {{ end }}
+      {{ end }}
+
+      {{ if $pag.HasNext }}
+      <li class="page-item">
+        <a class="page-link" href="{{ $pag.Next.URL }}" rel="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
+{{ end }}

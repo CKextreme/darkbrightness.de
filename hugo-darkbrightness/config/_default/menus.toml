@@ -2,15 +2,21 @@
 # Note: [] is a table in TOML
 
 [[main]]
-    identifier = "about"
-    name = "about hugo"
-    pre = "<i class='fa fa-heart'></i>"
-    url = "/about/"
-    weight = -110
+    name = "Home"
+    url = "/"
+    weight = 1
 
 [[main]]
-    name = "getting started"
-    post = "<span class='alert'>New!</span>"
-    pre = "<i class='fa fa-road'></i>"
-    url = "/getting-started/"
-    weight = -100
+    name = "Posts"
+    url = "/posts"
+    weight = 2
+
+[[main]]
+    name = "Kategorien"
+    url = "/categories"
+    weight = 3
+
+[[main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4

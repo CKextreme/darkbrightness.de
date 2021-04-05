@@ -1,0 +1,3 @@
+https://gohugo.io/variables/page/
+
+https://gohugo.io/variables/page/#page-level-params
