@@ -1,0 +1,1 @@
+An empty section with `_index.md` to force GoHugo to get a `/posts` URL to list all available posts.
