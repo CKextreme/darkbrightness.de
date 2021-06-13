@@ -1,0 +1,149 @@
+/* @use-rule currently not supported in libsass:
+https://sass-lang.com/documentation/at-rules/use */
+
+@import 'plugins/sanitize';
+// Use SCSS-partials, but normally @use should be used instead of @import!
+@import 'custom/_colors';
+@import 'custom/_general';
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Open Sans Regular";
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    background-image: url("/images/bg2.png");
+    background-color: black;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: 0;
+
+        a {
+            color: gray;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+nav {
+    background-color: white;
+    text-align: right;
+    padding: 0 25px;
+
+    ul {
+        li {
+            display: inline-block;
+            margin: 0.5em;
+            margin-right: 0;
+
+            a {
+                background-color: black;
+                color: white;
+                padding: 0.5em 1em;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    padding: 0 25px;
+}
+
+body > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+article {
+    & > p {
+        border-bottom: 1px solid lightgray;
+    }
+
+    width: 100%;
+    max-width: 100%;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 0px #333;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #111;
+
+    h2 {
+        margin: 0;
+        a {
+            color: red;
+        }
+
+        & + p {
+            font-size: small;
+            margin: 0;
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        line-height: 1;
+        font-size: small;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+/*
+nav {
+        display: flex;
+        width: 1024px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        
+
+        
+
+        
+    }
+
+*/
+
+// set Container Width for specific display sizes globally over this class
+.container {}
+
+// big post
+.section .featured {}
+
+// latest articles + trending post
+.section .blog {}

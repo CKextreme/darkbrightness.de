@@ -1,5 +1,9 @@
+{{ define "main" }}
+
 <h1>Taxonomy.html / Page Kind: {{ .Page.Kind }} / ContentType: {{ .Page.Type }}</h1>
 
 {{ range .Pages }}
     <li>{{.}} ({{.Title}})</li>
 {{end}}
+
+{{ end }}

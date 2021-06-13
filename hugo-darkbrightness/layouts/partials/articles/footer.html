@@ -1,5 +1,9 @@
 {{ if .Truncated }}
 <footer>
+    <p>
+        <span>⌚</span>
+        <span>{{ i18n "readingtime" }} {{ partial "_helpers/readingtime" . }} min.</span>
+    </p>
     <a href="{{ .Permalink }}">{{ i18n "readmore" }}</a>
 </footer>
 {{ end }}

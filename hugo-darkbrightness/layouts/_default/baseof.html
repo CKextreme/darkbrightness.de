@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "de" }}">
 
+{{/*
 {{ partial "core/head.html" . }}
+*/}}
+
+<head>
+{{ with partial "_pipes/postSCSS" "test" }}
+<link rel="stylesheet" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" media="all">
+{{ end }}
+</head>
 
 <body>
 {{ partial "core/header.html" . }}
